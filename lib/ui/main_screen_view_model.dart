@@ -16,6 +16,7 @@ class MainScreenViewModel extends ChangeNotifier {
     final resultRepoUsers = await _api.getUsers();
     if (resultRepoUsers.errorMessage == null) {
       users = resultRepoUsers.usersList ?? [];
+      errorMessage = null;
       isLoading = true;
       notifyListeners();
     } else {
